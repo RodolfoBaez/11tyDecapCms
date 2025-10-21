@@ -21,6 +21,8 @@ module.exports = function(eleventyConfig) {
       input: "src",
       // Build the final, static website files into the 'public' folder
       output: "public"
-    }
+    },
+    // Add this line to stop Eleventy from processing .html files as templates
+    htmlTemplateEngine: false
   };
 }
