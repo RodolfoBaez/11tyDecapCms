@@ -1,0 +1,5 @@
+{
+  "Json_Comment": "we used article.njk for blog posts layout, and tag them as post for easier filtering",
+  "layout": "article.njk",
+  "tags": "post"
+}
