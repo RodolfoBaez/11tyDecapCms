@@ -1,0 +1,23 @@
+---
+layout: 'base.njk'
+---
+
+<!-- this is the template for individual articles/posts -->
+<article class="main-article">
+  <!-- the title, image, imageAlt, and content variables are all pulled from markdown content in src/blog -->
+<div class="container container--narrow flow">
+  
+    <h1 class="article-title" style="margin-top:2rem;">
+      {{ title }}
+    </h1>
+    <figure class="main-article__figure">
+      <img src="{{ image }}" alt="{{ imageAlt }}">
+      <figcaption>
+        {{ imageAlt }}
+      </figcaption>
+    </figure>
+   
+    {{ content | safe}}
+
+</div>
+</article>
