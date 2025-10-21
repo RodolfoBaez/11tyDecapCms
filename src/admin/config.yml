@@ -5,7 +5,7 @@ backend:
   branch: main
   # 🚨 CRITICAL FIX 🚨: Tells the CMS to use the Cloudflare Access proxy for login
   # REPLACE <YOUR-TEAM-NAME> with your actual Cloudflare Access Team Name!
-  identity_url: "https://11tydecapcmstest.cloudflareaccess.com/cdn-cgi/access/login"
+  identity_url: "https://11tydecapcmstest.cloudflareaccess.com/cdn-cgi/access/callback"
 # where the CMS will store uploaded images
 # NOTE: This path should point to the public output folder
 media_folder: "src/assets"
