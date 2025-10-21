@@ -4,6 +4,9 @@ backend:
   name: github
   repo: RodolfoBaez/11tyDecapCms
   branch: main
+  auth_type: pkce
+  app_id: Ov23liP91Z0zcqbmLTnE
+
 # where the CMS will store uploaded images
 # NOTE: This path should point to the public output folder
 media_folder: "src/assets"
