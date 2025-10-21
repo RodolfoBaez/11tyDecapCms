@@ -31,7 +31,6 @@
   <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
   
   <script>
-    // Define the configuration object
     const config = {
       backend: {
         name: 'github',
@@ -43,6 +42,7 @@
       public_folder: '/assets',
       collections: [
         {
+          // ✅ This collection is named 'blog'
           name: 'blog',
           label: 'Blog',
           folder: 'src/blog',
@@ -60,6 +60,7 @@
           ],
         },
         {
+          // ✅ This collection is named 'pages' (which is unique)
           name: 'pages',
           label: 'Pages',
           files: [
@@ -83,7 +84,6 @@
       ],
     };
     
-    // Initialize the CMS with our config object
     CMS.init({ config });
   </script>
 
