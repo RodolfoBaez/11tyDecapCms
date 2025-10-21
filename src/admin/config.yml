@@ -1,17 +1,12 @@
-# CMS (Decap) Configuration File
 backend:
-  name: github # Switched from git-gateway to the direct github backend
-  # 🚨 IMPORTANT: Replace with your actual GitHub username and repository name
-  repo: "RodolfoBaez/11tyDecapCms" 
+  name: github
+  repo: "RodolfoBaez/11tyDecapCms"
   branch: main
-  auth_type: "external" # Tells Decap that authentication is handled outside the CMS
+  auth_type: "external"
 
-# Where the CMS will store uploaded images
 media_folder: "src/assets"
-# How the CMS will reference images in markdown files (relative to the site root)
 public_folder: "/assets"
 
-# Configuration for the blog collection
 collections:
   - name: "blog"
     label: "Blog"
@@ -28,7 +23,6 @@ collections:
       - { label: "Image caption", name: "imageAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       
-  # Configuration for the single Homepage file
   - name: "pages"
     label: "Pages"
     files:
@@ -38,9 +32,9 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "hidden" }
           - { label: "Layout", name: "layout", widget: "hidden" }
-          - { label: "Hero Headline", name: "hero_headline", widget: "string", default: "Freshwater Ecology Research in the Hudson Valley" }
-          - { label: "Paragraph 1", name: "hero_p1", widget: "markdown", default: "Welcome to thinIceProject, the official website for the research team..." }
-          - { label: "Paragraph 2", name: "hero_p2", widget: "markdown", default: "Our fieldwork focuses on sampling and analysis..." }
-          - { label: "Hero Image", name: "hero_image", widget: "image", default: "assets/MohonkLake.jpeg" }
-          - { label: "Image Alt Text", name: "hero_image_alt", widget: "string", default: "An image related to freshwater ecology research, such as a lake or scientific equipment" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Paragraph 1", name: "hero_p1", widget: "markdown" }
+          - { label: "Paragraph 2", name: "hero_p2", widget: "markdown" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+          - { label: "Image Alt Text", name: "hero_image_alt", widget: "string" }
           - { label: "Page Template (DO NOT TOUCH)", name: "body", widget: "hidden" }
