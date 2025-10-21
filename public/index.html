@@ -1,14 +1,18 @@
+<!-- this is the template that wraps all pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>homepage</title>
+  <title>My homepage</title>
   <link rel="stylesheet" href="/style.css">
+  <!-- Netlify Identity Widget script to handle login/logout and redirect to admin page -->
+  <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-<header class="page-header">
+<!-- include the header with navbar -->
+  <header class="page-header">
   <div class="container">
     <div class="page-header__content">
       <div class="site-branding">
@@ -29,15 +33,18 @@
   </div>
 </header>
   <main>
-      
+<!-- page content gets injected here depending on what page user clicked on-->
+          
 <section class="hero">
   <div class="container flow">
       <div class="hero__content flow">
         <h1 class="section-title">Freshwater Ecology Research in the Hudson Valley</h1>
         
-        <p>Welcome to <b>thinIceProject</b>, the official website for the research team led by <b>Doctor Richardson</b>. We are dedicated to studying freshwater ecology across the Hudson Valley region.</p>
+        <p>Welcome to <b>thinIceProject</b>, the official website for the research team led by <b>Doctor Richardson</b>. We are dedicated to studying freshwater ecology across the Hudson Valley region.
+</p>
         
-        <p>Our fieldwork focuses on sampling and analysis in local bodies of water, including <b>Lake Minnewaska</b>, <b>Lake Mohonk</b>, and other critical small aquatic ecosystems in the area. Our articles below document our findings, methodologies, and progress.</p>
+        <p>Our fieldwork focuses on sampling and analysis in local bodies of water, including <b>Lake Minnewaska</b>, <b>Lake Mohonk</b>, and other critical small aquatic ecosystems in the area. Our articles below document our findings, methodologies, and progress.
+</p>
         
         <div class="flex-group">
           <a href="#featured-articles" class="btn btn--primary">Featured Research</a>
@@ -45,7 +52,7 @@
         </div>
       </div>
       <div>
-        <img src="assets/MohonkLake.jpeg" alt="An image of Lake Mohonk, a site for freshwater ecology research" class="hero__image">
+        <img src="assets/MohonkLake.jpeg" alt="An image related to freshwater ecology research, such as a lake or scientific equipment" class="hero__image">
       </div>
   </div>
 </section>
@@ -80,7 +87,8 @@
   </div>
 </section>
   </main>
-<footer class="site-footer">
+<!-- include the footer  -->
+  <footer class="site-footer">
   <div class="container flow">
     
     <img 
@@ -100,6 +108,19 @@
     
   </div>
 </footer>
+
+<!-- Netlify 'Identity script' to redirect to admin on login base on url-->
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>

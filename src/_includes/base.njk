@@ -1,3 +1,4 @@
+<!-- this is the template that wraps all pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +7,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/style.css">
+  <!-- Netlify Identity Widget script to handle login/logout and redirect to admin page -->
+  <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-{% include 'header.njk'  %}
+<!-- include the header with navbar -->
+  {% include 'header.njk'  %}
   <main>
-{{ content | safe }}
+<!-- page content gets injected here depending on what page user clicked on-->
+    {{ content | safe }}
   </main>
-{% include 'footer.njk' %}
+<!-- include the footer  -->
+  {% include 'footer.njk' %}
+
+<!-- Netlify 'Identity script' to redirect to admin on login base on url-->
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>

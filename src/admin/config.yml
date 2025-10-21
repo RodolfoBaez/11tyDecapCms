@@ -1,23 +1,46 @@
+# CMS(Netlify) Configuration File
+# Allows content editing for blog posts in admin interface
 backend:
-  name: github
-  repo: RodolfoBaez/11tyDecapCms
+  name: git-gateway
   branch: main
+# where the CMS will store uploaded images
+# NOTE: This path should point to the public output folder
+media_folder: "src/assets"
+# where the CMS will reference the images in the markdown files
+# NOTE: This path is relative to the site root (public/ output)
+public_folder: "/assets"
 
-media_folder: src/assets
-public_folder: /assets
-
+# Configuration for the blog collection
 collections:
-  - name: blog
-    label: Blog
-    folder: src/blog
+  - name: "blog"
+    label: "Blog"
+    folder: "src/blog"
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
-      - { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] }
-      - { label: 'Featured Image', name: 'image', widget: 'image' }
-      - { label: 'Image caption', name: 'imageAlt', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Image caption", name: "imageAlt", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      
+  # CRITICAL: Configuration for the single Homepage file
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/index.njk"
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          # --- Editable Content Fields (These are safe) ---
+          - { label: "Title", name: "title", widget: "hidden" }
+          - { label: "Layout", name: "layout", widget: "hidden" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string", default: "Freshwater Ecology Research in the Hudson Valley" }
+          - { label: "Paragraph 1", name: "hero_p1", widget: "markdown", default: "Welcome to thinIceProject, the official website for the research team..." }
+          - { label: "Paragraph 2", name: "hero_p2", widget: "markdown", default: "Our fieldwork focuses on sampling and analysis..." }
+          - { label: "Hero Image", name: "hero_image", widget: "image", default: "assets/MohonkLake.jpeg" }
+          - { label: "Image Alt Text", name: "hero_image_alt", widget: "string", default: "An image related to freshwater ecology research, such as a lake or scientific equipment" }
+          - { label: "Page Template (DO NOT TOUCH)", name: "body", widget: "hidden" }
