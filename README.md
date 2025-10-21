@@ -104,11 +104,20 @@ This setup allows for a seamless and secure content editing workflow:
 
 1.  A team member navigates to the admin URL, for example, `https://your-site.pages.dev/admin/`.
 
-2.  They are first prompted by **Cloudflare Zero Trust** to log in. Access is granted only to pre-approved users(the owner of the Cloudflare site must approve you), who can authenticate using their specific email address or a linked GitHub account.
+2.  They are first prompted by **Cloudflare Zero Trust** to log in. Access is granted only to pre-approved users, who can authenticate using their specific email address or a linked GitHub account.
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+  <img src="https://github.com/user-attachments/assets/2a2a4ca3-8658-4597-b21c-5e9380153f68" alt="Screenshot 1" style="width: 48%; height: 350px; max-width: 350px;">
+  <img src="https://github.com/user-attachments/assets/836d370e-50c8-4478-9daf-f9f4cc4b82bd" alt="Screenshot 2" style="width: 48%; height: 350px; max-width: 350px;">
+</div>
 
 3.  Once authenticated through Cloudflare, the **DecapBridge CMS** login page appears. The team member must have already accepted an invitation link to create their own Decap Bridge account with a unique password. They then log in with these credentials.
 
-4.  After logging in, the Decap CMS interface loads, showing the content collections (e.g., "Blog Posts") 
+<img width="350" height="350" alt="Screenshot 2025-10-21 at 7 22 15 PM" src="https://github.com/user-attachments/assets/97dea566-5a3d-413e-90cb-02e3c17123da" />
+
+4.  After logging in, the Decap CMS interface loads, showing the content collections (e.g., "Blog Posts")
+
+<img width="1257" height="431" alt="Screenshot 2025-10-21 at 7 22 49 PM" src="https://github.com/user-attachments/assets/cb9fa355-13ca-4065-978f-9f2f2e7d31f7" />
 
 5.  The user can create a new post or edit an existing one. When they click **"Publish,"** Decap CMS commits the changes directly to the project's GitHub repository.
 
