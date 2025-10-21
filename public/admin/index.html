@@ -7,16 +7,45 @@
   <link href="https://unpkg.com/netlify-cms@^2/dist/cms.css" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- 🚨 PART 1: TOKEN PROCESSING SCRIPT (Must run BEFORE cms.js) 🚨 -->
+  <script>
+    // This script immediately checks the URL for the token hash provided by Cloudflare Access.
+    if (window.location.hash.includes('access_token')) {
+      try {
+        const hash = window.location.hash.substring(1);
+        const params = new URLSearchParams(hash);
+        const token = params.get('access_token');
+        
+        // Save the token manually into localStorage where Decap CMS will check for it.
+        localStorage.setItem('decap-cms-user', JSON.stringify({
+          token: token,
+          // NOTE: Uses the exact domain from your config.yml
+          instanceID: 'https://11tydecapcmstest.cloudflareaccess.com', 
+          provider: 'github' 
+        }));
+        
+        // Clean the URL hash after saving the token (history.replaceState is non-destructive)
+        history.replaceState(null, '', window.location.pathname);
+      } catch (e) {
+        // If the script fails, log it but let the rest of the page load
+        console.error('Error processing access token:', e); 
+      }
+    }
+  </script>
+
+  <!-- PART 2: Load the Decap CMS Library -->
   <script src="https://unpkg.com/netlify-cms@^2/dist/cms.js"></script>
   
+  <!-- PART 3: CMS Initialization -->
   <script>
-    // Initialize Decap CMS, telling it to use the git-gateway backend.
-    // Cloudflare Access will handle the actual user login before this script runs.
+    // The CMS init block is now very simple; it relies on the script above
+    // having already stored the session token.
     CMS.init({
         config: {
           backend: {
             name: 'git-gateway',
-            branch: 'main' // Ensure this matches your production branch name
+            branch: 'main'
           }
         }
     });
