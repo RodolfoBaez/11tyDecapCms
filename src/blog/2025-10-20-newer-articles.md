@@ -1,5 +1,5 @@
 ---
-title: "testing with decapbridge and cloudflare hosting v1 testing local host "
+title: "testing with decapbridge and cloudflare hosting v1 testing "
 description: dfafd
 author: dads
 date: 2025-10-20T18:58:05.513Z
