@@ -3,9 +3,10 @@
 backend:
   name: git-gateway
   branch: main
-  # 🚨 CRITICAL FIX 🚨: Tells the CMS to use the Cloudflare Access proxy for login
-  # REPLACE <YOUR-TEAM-NAME> with your actual Cloudflare Access Team Name!
-  identity_url: "https://11tydecapcmstest.cloudflareaccess.com/cdn-cgi/access/login"
+  # 🚨 FINAL FIX 🚨: Using explicit keys for reliable Cloudflare Access connection
+  auth_server: "https://11tydecapcmstest.cloudflareaccess.com"
+  base_url: "https://11tydecapcmstest.cloudflareaccess.com"
+  auth_endpoint: "cdn-cgi/access/login"
 # where the CMS will store uploaded images
 # NOTE: This path should point to the public output folder
 media_folder: "src/assets"
