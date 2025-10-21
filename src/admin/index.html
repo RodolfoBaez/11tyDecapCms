@@ -5,41 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager - thinIceproject</title>
   <link href="https://unpkg.com/decap-cms@^3/dist/decap-cms.css" rel="stylesheet" />
+  <script>window.CMS_MANUAL_INIT = true;</script>
 </head>
 <body>
+  <!-- This is where Decap CMS will mount -->
   <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
   
   <script>
-    CMS.init({
-      config: {
-        backend: {
-          name: 'github',
-          repo: 'RodolfoBaez/11tyDecapCms',
-          branch: 'main',
-          // Remove auth_type: 'external'
-        },
-        media_folder: 'src/assets',
-        public_folder: '/assets',
-        collections: [
-          {
-            name: 'blog',
-            label: 'Blog',
-            folder: 'src/blog',
-            create: true,
-            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
-            fields: [
-              { label: 'Title', name: 'title', widget: 'string' },
-              { label: 'Description', name: 'description', widget: 'string' },
-              { label: 'Author', name: 'author', widget: 'string' },
-              { label: 'Date', name: 'date', widget: 'datetime' },
-              { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] },
-              { label: 'Featured Image', name: 'image', widget: 'image' },
-              { label: 'Image caption', name: 'imageAlt', widget: 'string' },
-              { label: 'Body', name: 'body', widget: 'markdown' },
+    // Wait for both DOM and CMS script to be ready
+    window.addEventListener('load', function() {
+      // Small delay to ensure everything is settled
+      setTimeout(function() {
+        CMS.init({
+          config: {
+            backend: {
+              name: 'github',
+              repo: 'RodolfoBaez/11tyDecapCms',
+              branch: 'main',
+            },
+            media_folder: 'src/assets',
+            public_folder: '/assets',
+            collections: [
+              {
+                name: 'blog',
+                label: 'Blog',
+                folder: 'src/blog',
+                create: true,
+                slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+                fields: [
+                  { label: 'Title', name: 'title', widget: 'string' },
+                  { label: 'Description', name: 'description', widget: 'string' },
+                  { label: 'Author', name: 'author', widget: 'string' },
+                  { label: 'Date', name: 'date', widget: 'datetime' },
+                  { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] },
+                  { label: 'Featured Image', name: 'image', widget: 'image' },
+                  { label: 'Image caption', name: 'imageAlt', widget: 'string' },
+                  { label: 'Body', name: 'body', widget: 'markdown' },
+                ],
+              }
             ],
           }
-        ],
-      }
+        });
+      }, 100);
     });
   </script>
 </body>
