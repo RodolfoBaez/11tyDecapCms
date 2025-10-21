@@ -4,51 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager - thinIceproject</title>
-  <link href="https://unpkg.com/netlify-cms@^2/dist/cms.css" rel="stylesheet" />
+  <link href="https://unpkg.com/decap-cms@^3/dist/cms.css" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- 🚨 PART 1: TOKEN PROCESSING SCRIPT (Must run BEFORE cms.js) 🚨 -->
   <script>
-    // This script immediately checks the URL for the token hash provided by Cloudflare Access.
     if (window.location.hash.includes('access_token')) {
       try {
         const hash = window.location.hash.substring(1);
         const params = new URLSearchParams(hash);
         const token = params.get('access_token');
         
-        // Save the token manually into localStorage where Decap CMS will check for it.
         localStorage.setItem('decap-cms-user', JSON.stringify({
           token: token,
-          // NOTE: Uses the exact domain from your config.yml
-          instanceID: 'https://11tydecapcmstest.cloudflareaccess.com', 
+          // 🚨 IMPORTANT: This MUST EXACTLY match the 'repo' value from your config.yml
+          instanceID: 'RodolfoBaez/11tyDecapCms', 
           provider: 'github' 
         }));
         
-        // Clean the URL hash after saving the token (history.replaceState is non-destructive)
+        // Clean the URL hash so it doesn't show the long token
         history.replaceState(null, '', window.location.pathname);
       } catch (e) {
-        // If the script fails, log it but let the rest of the page load
         console.error('Error processing access token:', e); 
       }
     }
   </script>
 
-  <!-- PART 2: Load the Decap CMS Library -->
-  <script src="https://unpkg.com/netlify-cms@^2/dist/cms.js"></script>
+  <script src="https://unpkg.com/decap-cms@^3/dist/cms.js"></script>
   
-  <!-- PART 3: CMS Initialization -->
-  <script>
-    // The CMS init block is now very simple; it relies on the script above
-    // having already stored the session token.
-    CMS.init({
-        config: {
-          backend: {
-            name: 'git-gateway',
-            branch: 'main'
-          }
-        }
-    });
-  </script>
-</body>
+  </body>
 </html>

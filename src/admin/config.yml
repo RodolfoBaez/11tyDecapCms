@@ -1,17 +1,14 @@
-# CMS(Netlify) Configuration File
-# Allows content editing for blog posts in admin interface
+# CMS (Decap) Configuration File
 backend:
-  name: git-gateway
+  name: github # Switched from git-gateway to the direct github backend
+  # 🚨 IMPORTANT: Replace with your actual GitHub username and repository name
+  repo: "RodolfoBaez/11tyDecapCms" 
   branch: main
-  # 🚨 FINAL FIX 🚨: Using explicit keys for reliable Cloudflare Access connection
-  auth_server: "https://11tydecapcmstest.cloudflareaccess.com"
-  base_url: "https://11tydecapcmstest.cloudflareaccess.com"
-  auth_endpoint: "cdn-cgi/access/login"
-# where the CMS will store uploaded images
-# NOTE: This path should point to the public output folder
+  auth_type: "external" # Tells Decap that authentication is handled outside the CMS
+
+# Where the CMS will store uploaded images
 media_folder: "src/assets"
-# where the CMS will reference the images in the markdown files
-# NOTE: This path is relative to the site root (public/ output)
+# How the CMS will reference images in markdown files (relative to the site root)
 public_folder: "/assets"
 
 # Configuration for the blog collection
@@ -31,7 +28,7 @@ collections:
       - { label: "Image caption", name: "imageAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       
-  # CRITICAL: Configuration for the single Homepage file
+  # Configuration for the single Homepage file
   - name: "pages"
     label: "Pages"
     files:
@@ -39,7 +36,6 @@ collections:
         label: "Homepage"
         name: "homepage"
         fields:
-          # --- Editable Content Fields (These are safe) ---
           - { label: "Title", name: "title", widget: "hidden" }
           - { label: "Layout", name: "layout", widget: "hidden" }
           - { label: "Hero Headline", name: "hero_headline", widget: "string", default: "Freshwater Ecology Research in the Hudson Valley" }
