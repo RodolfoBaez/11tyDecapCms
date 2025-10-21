@@ -1,7 +1,8 @@
-# CMS(Netlify) Configuration File
+# Decap CMS Configuration File
 # Allows content editing for blog posts in admin interface
 backend:
-  name: git-gateway
+  name: github
+  repo: RodolfoBaez/11tyDecapCms
   branch: main
 # where the CMS will store uploaded images
 # NOTE: This path should point to the public output folder
