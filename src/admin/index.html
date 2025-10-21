@@ -4,22 +4,42 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager - thinIceproject</title>
-  
   <link href="https://unpkg.com/decap-cms@^3/dist/decap-cms.css" rel="stylesheet" />
+</head>
+<body>
 
   <script>
-    window.CMS_CONFIG = {
-      // Backend config matching your YAML
+    if (window.location.hash.includes('access_token')) {
+      try {
+        const hash = window.location.hash.substring(1);
+        const params = new URLSearchParams(hash);
+        const token = params.get('access_token');
+        
+        localStorage.setItem('decap-cms-user', JSON.stringify({
+          token: token,
+          instanceID: 'RodolfoBaez/11tyDecapCms', 
+          provider: 'github' 
+        }));
+        
+        history.replaceState(null, '', window.location.pathname);
+      } catch (e) {
+        console.error('Error processing access token:', e); 
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+  
+  <script>
+    const config = {
       backend: {
         name: 'github',
         repo: 'RodolfoBaez/11tyDecapCms',
         branch: 'main',
         auth_type: 'external',
       },
-      // Media and public folder config
       media_folder: 'src/assets',
       public_folder: '/assets',
-      // Collections config
       collections: [
         {
           name: 'blog',
@@ -61,29 +81,9 @@
         },
       ],
     };
+    
+    CMS.init({ config });
   </script>
 
-  <script>
-    if (window.location.hash.includes('access_token')) {
-      try {
-        const hash = window.location.hash.substring(1);
-        const params = new URLSearchParams(hash);
-        const token = params.get('access_token');
-        
-        localStorage.setItem('decap-cms-user', JSON.stringify({
-          token: token,
-          instanceID: 'RodolfoBaez/11tyDecapCms', 
-          provider: 'github' 
-        }));
-        
-        history.replaceState(null, '', window.location.pathname);
-      } catch (e) {
-        console.error('Error processing access token:', e); 
-      }
-    }
-  </script>
-</head>
-<body>
-  <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js" defer></script>
 </body>
 </html>
