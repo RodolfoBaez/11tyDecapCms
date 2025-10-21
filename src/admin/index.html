@@ -10,8 +10,28 @@
   <script src="https://unpkg.com/netlify-cms@^2/dist/cms.js"></script>
   
   <script>
-    // Initialize Decap CMS, telling it to use the git-gateway backend.
-    // Cloudflare Access will handle the actual user login before this script runs.
+    // 🚨 FINAL FIX SCRIPT 🚨
+    // This script checks the URL hash for the access token provided by Cloudflare Access.
+    if (window.location.hash.includes('access_token')) {
+      const hash = window.location.hash.substring(1);
+      const params = new URLSearchParams(hash);
+      const token = params.get('access_token');
+      
+      // The CMS uses this key in localStorage to check for an active user session.
+      localStorage.setItem('decap-cms-user', JSON.stringify({
+        token: token,
+        // The Identity Server URL from your config.yml
+        instanceID: 'https://11tydecapcmstest.cloudflareaccess.com',
+        // The Identity Provider used for the token
+        provider: 'github' 
+      }));
+      
+      // Clean the token from the URL for security and a cleaner look
+      history.replaceState(null, '', window.location.pathname);
+    }
+
+    // Initialize Decap CMS. It will now find the valid user data in localStorage 
+    // and skip the manual login prompt.
     CMS.init({
         config: {
           backend: {
