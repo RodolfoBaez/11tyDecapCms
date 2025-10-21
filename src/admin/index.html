@@ -5,8 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager - thinIceproject</title>
   <link href="https://unpkg.com/decap-cms@^3/dist/cms.css" rel="stylesheet" />
-</head>
-<body>
+
+  <script>
+    window.CMS_CONFIG = {
+      // Backend config matching your YAML
+      backend: {
+        name: 'github',
+        repo: 'RodolfoBaez/11tyDecapCms',
+        branch: 'main',
+        auth_type: 'external',
+      },
+      // Media and public folder config
+      media_folder: 'src/assets',
+      public_folder: '/assets',
+      // Collections config
+      collections: [
+        {
+          name: 'blog',
+          label: 'Blog',
+          folder: 'src/blog',
+          create: true,
+          slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+          fields: [
+            { label: 'Title', name: 'title', widget: 'string' },
+            { label: 'Description', name: 'description', widget: 'string' },
+            { label: 'Author', name: 'author', widget: 'string' },
+            { label: 'Date', name: 'date', widget: 'datetime' },
+            { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] },
+            { label: 'Featured Image', name: 'image', widget: 'image' },
+            { label: 'Image caption', name: 'imageAlt', widget: 'string' },
+            { label: 'Body', name: 'body', widget: 'markdown' },
+          ],
+        },
+        {
+          name: 'pages',
+          label: 'Pages',
+          files: [
+            {
+              file: 'src/index.njk',
+              label: 'Homepage',
+              name: 'homepage',
+              fields: [
+                { label: 'Title', name: 'title', widget: 'hidden' },
+                { label: 'Layout', name: 'layout', widget: 'hidden' },
+                { label: 'Hero Headline', name: 'hero_headline', widget: 'string' },
+                { label: 'Paragraph 1', name: 'hero_p1', widget: 'markdown' },
+                { label: 'Paragraph 2', name: 'hero_p2', widget: 'markdown' },
+                { label: 'Hero Image', name: 'hero_image', widget: 'image' },
+                { label: 'Image Alt Text', name: 'hero_image_alt', widget: 'string' },
+                { label: 'Page Template (DO NOT TOUCH)', name: 'body', widget: 'hidden' },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+  </script>
 
   <script>
     if (window.location.hash.includes('access_token')) {
@@ -17,12 +71,10 @@
         
         localStorage.setItem('decap-cms-user', JSON.stringify({
           token: token,
-          // 🚨 IMPORTANT: This MUST EXACTLY match the 'repo' value from your config.yml
           instanceID: 'RodolfoBaez/11tyDecapCms', 
           provider: 'github' 
         }));
         
-        // Clean the URL hash so it doesn't show the long token
         history.replaceState(null, '', window.location.pathname);
       } catch (e) {
         console.error('Error processing access token:', e); 
@@ -31,6 +83,6 @@
   </script>
 
   <script src="https://unpkg.com/decap-cms@^3/dist/cms.js"></script>
-  
-  </body>
+
+</body>
 </html>
