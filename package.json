@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/kevin-powell/11ty-blog-site#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^2.0.1"
   },
   "type": "commonjs"
 }
