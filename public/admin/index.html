@@ -16,13 +16,11 @@
         const hash = window.location.hash.substring(1);
         const params = new URLSearchParams(hash);
         const token = params.get('access_token');
-        
         localStorage.setItem('decap-cms-user', JSON.stringify({
           token: token,
           instanceID: 'RodolfoBaez/11tyDecapCms', 
           provider: 'github' 
         }));
-        
         history.replaceState(null, '', window.location.pathname);
       } catch (e) {
         console.error('Error processing access token:', e); 
@@ -33,38 +31,40 @@
   <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
   
   <script>
-    const config = {
-      backend: {
-        name: 'github',
-        repo: 'RodolfoBaez/11tyDecapCms',
-        branch: 'main',
-        auth_type: 'external',
-      },
-      media_folder: 'src/assets',
-      public_folder: '/assets',
-      collections: [
-        {
-          name: 'blog',
-          label: 'Blog',
-          folder: 'src/blog',
-          create: true,
-          slug: '---',
-          fields: [
-            { label: 'Title', name: 'title', widget: 'string' },
-            { label: 'Description', name: 'description', widget: 'string' },
-            { label: 'Author', name: 'author', widget: 'string' },
-            { label: 'Date', name: 'date', widget: 'datetime' },
-            { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] },
-            { label: 'Featured Image', name: 'image', widget: 'image' },
-            { label: 'Image caption', name: 'imageAlt', widget: 'string' },
-            { label: 'Body', name: 'body', widget: 'markdown' },
-          ],
-        }
-      ],
-    };
-    
-    // Now we initialize the CMS ourselves, and it will use our full config
-    CMS.init({ config });
+    document.addEventListener('DOMContentLoaded', function() {
+      const config = {
+        backend: {
+          name: 'github',
+          repo: 'RodolfoBaez/11tyDecapCms',
+          branch: 'main',
+          auth_type: 'external',
+        },
+        media_folder: 'src/assets',
+        public_folder: '/assets',
+        collections: [
+          {
+            name: 'blog',
+            label: 'Blog',
+            folder: 'src/blog',
+            create: true,
+            slug: '---',
+            fields: [
+              { label: 'Title', name: 'title', widget: 'string' },
+              { label: 'Description', name: 'description', widget: 'string' },
+              { label: 'Author', name: 'author', widget: 'string' },
+              { label: 'Date', name: 'date', widget: 'datetime' },
+              { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] },
+              { label: 'Featured Image', name: 'image', widget: 'image' },
+              { label: 'Image caption', name: 'imageAlt', widget: 'string' },
+              { label: 'Body', name: 'body', widget: 'markdown' },
+            ],
+          }
+        ],
+      };
+      
+      // Now that the page and scripts are ready, initialize the CMS.
+      CMS.init({ config });
+    });
   </script>
 
 </body>
