@@ -8,17 +8,16 @@ layout: 'base.njk'
       <div class="hero__content flow">
         <h1 class="section-title">{{ landingSection.hero.title }}</h1>
         
-        <p>{{ landingSection.hero.introduction | safe }}</p>
-        
-        <p>{{ landingSection.hero.description | safe }}</p>
-        
+        {# Correctly process Markdown from the CMS #}
+        <p>{{ landingSection.hero.introduction | markdown | safe }}</p>
+                
         <div class="flex-group">
           <a href="{{ landingSection.hero.primaryButtonLink }}" class="btn btn--primary">{{ landingSection.hero.primaryButtonText }}</a>
           <a href="{{ landingSection.hero.secondaryButtonLink }}" class="btn btn--neutral">{{ landingSection.hero.secondaryButtonText }}</a>
         </div>
       </div>
       <div>
-        <img src="{{ landingSection.hero.heroImage | url }}" alt="{{ landingSection.hero.heroImageAlt }}" class="hero__image">
+        <img src="{{ landingSection.hero.heroImage | url }}" class="hero__image">
       </div>
   </div>
 </section>

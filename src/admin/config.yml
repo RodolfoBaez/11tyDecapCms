@@ -70,12 +70,10 @@ collections:
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Introduction", name: "introduction", widget: "text" }
-              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Introduction", name: "introduction", widget: "markdown" }
               - { label: "Primary Button Text", name: "primaryButtonText", widget: "string" }
               - { label: "Primary Button Link", name: "primaryButtonLink", widget: "string" }
               - { label: "Secondary Button Text", name: "secondaryButtonText", widget: "string" }
               - { label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string" }
               - { label: "Hero Image", name: "heroImage", widget: "image" }
-              - { label: "Hero Image Alt Text", name: "heroImageAlt", widget: "string" }
          
