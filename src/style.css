@@ -210,7 +210,10 @@ section,
 /* //////////////////////
   Header
   /////////////////////// */
-
+  .page-header h1 a{
+    text-decoration: none;  
+  }
+  
 .page-header {
   padding: 2em 0;
   /* ADDED: Thin line separator */
