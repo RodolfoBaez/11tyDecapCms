@@ -66,7 +66,6 @@ The project is organized to separate content, templates, configuration, and asse
 │   ├── index.njk       # Template for the site homepage
 │   └── style.css       # Main stylesheet
 ├── .eleventy.js        # Main 11ty configuration file
-├── LICENSE             # Project license
 ├── package.json        # Project dependencies and scripts
 └── README.md           # You are here!
 ```
@@ -127,4 +126,5 @@ This setup allows for a seamless and secure content editing workflow:
 6.  This new commit on GitHub automatically triggers a new build and deployment on **Cloudflare Pages**.
 
 7.  Eleventy rebuilds the entire static site with the new or updated content, and the changes go live within minutes.
+
 
