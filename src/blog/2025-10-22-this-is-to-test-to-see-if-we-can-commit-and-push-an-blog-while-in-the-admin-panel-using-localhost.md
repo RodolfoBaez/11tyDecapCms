@@ -1,6 +1,6 @@
 ---
-title: this is to test to see if we can commit and push an blog while in the
-  admin panel using localhost
+title: "checking if we have limited to publishing in localhost to not rebuild
+  the site "
 description: this is to test to see if we can commit and push an blog while in
   the admin panel using localhost
 author: this is to test to see if we can commit and push an blog while in the
