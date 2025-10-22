@@ -9,11 +9,11 @@ backend:
   auth_token_endpoint: /sites/5a074181-f453-447e-a558-ec3afab000b3/token
   gateway_url: https://gateway.decapbridge.com
   commit_messages:
-    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    create: Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
     openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
 
 # Enable local backend for development (allows admin portal to work without DecapBridge)and test admin portal feature without having to rebuild the site)
@@ -57,4 +57,30 @@ collections:
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Image caption", name: "imageAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-    
+ # NEW: Homepage content collection
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "src/_data/homepage.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Introduction", name: "introduction", widget: "text" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Primary Button Text", name: "primaryButtonText", widget: "string" }
+              - { label: "Primary Button Link", name: "primaryButtonLink", widget: "string" }
+              - { label: "Secondary Button Text", name: "secondaryButtonText", widget: "string" }
+              - { label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string" }
+              - { label: "Hero Image", name: "heroImage", widget: "image" }
+              - { label: "Hero Image Alt Text", name: "heroImageAlt", widget: "string" }
+          - label: "Featured Section"
+            name: "featuredSection"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
