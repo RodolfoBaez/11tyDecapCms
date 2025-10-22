@@ -1,0 +1,44 @@
+# 1. DEPENDENCIES AND PACKAGE LOCKS
+
+# Node modules directory (large folder of dependencies)
+
+node_modules/
+Logs and error reports
+
+.log
+npm-debug.log
+yarn-error.log*
+lerna-debug.log*
+
+2. BUILD OUTPUT AND CACHES
+
+Eleventy output folder (your compiled website files)
+
+/public
+
+Eleventy cache and temporary files
+
+.eleventy-cache/
+.cache/
+
+3. ENVIRONMENT AND CONFIG FILES
+
+Environment variables (used for API keys or local settings)
+
+.env
+.env.*
+
+4. OPERATING SYSTEM & EDITOR FILES
+
+macOS files
+
+.DS_Store
+
+Windows files
+
+Thumbs.db
+desktop.ini
+
+IDE/Editor files (e.g., VS Code settings)
+
+.vscode/
