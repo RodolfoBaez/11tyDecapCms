@@ -7,13 +7,13 @@ placeholder expalin thiniceproject
 
 * **Templating Language:** Nunjucks (.njk)
 
-* **CMS:** Decap CMS
+* **Content Management System:** Decap CMS
 
 * **CMS Authentication:** DecapBridge
 
 * **Hosting:** Cloudflare Pages
 
-* **Dependencies:** Node.js / npm
+* **Installation Requirements:** Node.js / npm
 
 ## Getting Started Local Development & CMS Testing (The `npm run dev` Command)
 
@@ -34,7 +34,7 @@ When you run `npm run dev`, it executes two scripts simultaneously:
 
 5. Make a change to a blog post and click `Publish`.
 
-| Live Cloudflare Site (`pages.dev`) | Local Development (`localhost`) |
+| Live Cloudflare Site (`https://11tydecapcms.pages.dev/`) | Local Development (`http://localhost:8080`) |
 | :--- | :--- |
 | **Backend:** DecapBridge / Git Gateway | **Backend:** `netlify-cms-proxy-server` |
 | **Publish Action:** Creates Git Commit & pushes to GitHub | **Publish Action:** Writes changes directly to your local file system (e.g., `src/blog/`) |
