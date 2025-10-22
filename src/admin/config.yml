@@ -61,9 +61,9 @@ collections:
   - label: "Pages"
     name: "pages"
     files:
-      - label: "Homepage"
-        name: "homepage"
-        file: "src/_data/homepage.json"
+      - label: "landingSection"
+        name: "landingSection"
+        file: "src/_data/landingSection.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -78,9 +78,4 @@ collections:
               - { label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string" }
               - { label: "Hero Image", name: "heroImage", widget: "image" }
               - { label: "Hero Image Alt Text", name: "heroImageAlt", widget: "string" }
-          - label: "Featured Section"
-            name: "featuredSection"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
+         

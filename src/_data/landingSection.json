@@ -6,12 +6,8 @@
     "heroImageAlt": "An image related to freshwater ecology research, such as a lake or scientific equipment",
     "primaryButtonLink": "https://www.google.com/?zx=1761112171593&no_sw_cr=1",
     "secondaryButtonText": "All Field Reports",
-    "title": "Freshwater Ecology Research in the Hudson Valley",
+    "title": "Freshwater Ecology Research in the Hudson Valley testing change",
     "introduction": "Welcome to <b>thinIceProject</b>, the official website for the research team led by <b>Doctor Richardson</b>. We are dedicated to studying freshwater ecology across the Hudson Valley region.",
     "description": "Our fieldwork focuses on sampling and analysis in local bodies of water, including <b>Lake Minnewaska</b>, <b>Lake Mohonk</b>, and other critical small aquatic ecosystems in the area. Our articles below document our findings, methodologies, and progress."
-  },
-  "featuredSection": {
-    "title": "Featured Research",
-    "description": "Here is a sample of our key articles and field reports that highlight our current projects and research goals."
   }
 }
