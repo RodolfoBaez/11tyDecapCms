@@ -104,7 +104,7 @@ The project is organized to separate content, templates, configuration, and asse
 
 This setup allows for a seamless and secure content editing workflow:
 
-1.  A team member navigates to the admin URL, for example, `https://your-site.pages.dev/admin/`.
+1.  A team member navigates to the admin URL,`https://11tydecapcms.pages.dev/admin/`.
 
 2.  They are first prompted by **Cloudflare Zero Trust** to log in. Access is granted only to pre-approved users, who can authenticate using their specific email address or a linked GitHub account.
 
@@ -126,5 +126,6 @@ This setup allows for a seamless and secure content editing workflow:
 6.  This new commit on GitHub automatically triggers a new build and deployment on **Cloudflare Pages**.
 
 7.  Eleventy rebuilds the entire static site with the new or updated content, and the changes go live within minutes.
+
 
 
