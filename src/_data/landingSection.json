@@ -7,7 +7,7 @@
     "primaryButtonLink": "https://www.google.com/?zx=1761112171593&no_sw_cr=1",
     "secondaryButtonText": "All Field Reports",
     "title": "testing for youssup",
-    "introduction": "* testing this [](https://google.com)[trying to make this a link ](https://google.com)trying to make this **bold. trying this out on the actual build**. look at how *cool this is maybe this is `cooler it look like code but this is a list`* \n* *`i made it a list above`*\n\n  ![this is alt](/assets/MohonkLake.jpeg \"i can add an image as well wow\")",
+    "introduction": "* testing this [](https://google.com)[trying to make this a link ](https://google.com)trying to make this **bold. trying this out on the actual build**. look at how *cool this is maybe this is `cooler it look like code but this is a list`* \n* *`i made it a list above`*\n\n  dont mind the image below look at the admin panel to see how cool that we can nest an image into this p tag and all the other html tags without code!!\n\n  ![this is alt](/assets/MohonkLake.jpeg \"i can add an image as well wow\")",
     "description": "Our fieldwork focuses on sampling and analysis in local bodies of water, including <b>Lake Minnewaska</b>, <b>Lake Mohonk</b>, and other critical small aquatic ecosystems in the area. Our articles below document our findings, methodologies, and progress."
   }
 }
