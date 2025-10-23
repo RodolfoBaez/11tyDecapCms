@@ -26,7 +26,7 @@ layout: 'base.njk'
   <div class="container flow">
     
     <h2 class="section-title text-center">{{ homePage.featuredSection.title }}</h2>
-    <p class="text-center">{{ homePage.featuredSection.description | safe }}</p>
+    <p class="text-center">{{ homePage.featuredSection.description | markdown | safe }}</p>
     
     <ul role="list" class="articles__list flow">
 
