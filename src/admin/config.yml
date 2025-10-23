@@ -76,4 +76,10 @@ collections:
               - { label: "Secondary Button Text", name: "secondaryButtonText", widget: "string" }
               - { label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string" }
               - { label: "Hero Image", name: "heroImage", widget: "image" }
-         
+
+          - label: "Featured Articles Section"
+            name: "featuredSection"
+            widget: "object"
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "Section Description", name: "description", widget: "markdown" }
