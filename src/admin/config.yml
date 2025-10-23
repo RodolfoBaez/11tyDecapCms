@@ -71,7 +71,7 @@ collections:
     files:
       - label: "HomePage"
         name: "landingSection"
-        file: "src/_data/landingSection.json"
+        file: "src/_data/homePage.json"
         fields:
           - label: "Landing Section"
             name: "hero"
