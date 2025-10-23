@@ -1,0 +1,16 @@
+{
+  "hero": {
+    "secondaryButtonLink": "./blog",
+    "heroImage": "/assets/MohonkLake.jpeg",
+    "primaryButtonText": "Featured Research(goes to google.com)",
+    "primaryButtonLink": "https://www.google.com/?zx=1761112171593&no_sw_cr=1",
+    "secondaryButtonText": "All Field Reports",
+    "title": "changin title after all file name changes",
+    "introduction": "* testing this [](https://google.com)[trying to make this a link ](https://google.com)trying to make this **bold. trying this out on the actual build**. look at how *cool this is maybe this is `cooler it look like code but this is a list`* \n* *`i made it a list above`*",
+    "description": "Our fieldwork focuses on sampling and analysis in local bodies of water, including **Lake Minnewaska**, **Lake Mohonk**, and other critical small aquatic ecosystems in the area. Our articles below document our findings, methodologies, and progress."
+  },
+  "featuredSection": {
+    "title": "Featured Research",
+    "description": "*Here is a sample of our key articles and field reports that highlight our current projects and research **goals**.*"
+  }
+}

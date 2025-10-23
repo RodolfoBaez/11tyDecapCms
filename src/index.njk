@@ -3,30 +3,31 @@ title: My homepage
 layout: 'base.njk'
 ---
       
-<section class="hero">
+<section class="landingSection">
   <div class="container flow">
-      <div class="hero__content flow">
-        <h1 class="section-title">{{ landingSection.hero.title }}</h1>
+      <div class="landingSection__content flow">
+        {# UPDATED VARIABLE: Uses homePage, need homePage here due to the content being stored in homePage.json#}
+        <h1 class="section-title">{{ homePage.hero.title }}</h1>
         
-        <p>{{ landingSection.hero.introduction | safe }}</p>
-        
-        <p>{{ landingSection.hero.description | safe }}</p>
-        
+        <p>{{ homePage.hero.introduction | markdown | safe }}</p> 
+                
         <div class="flex-group">
-          <a href="{{ landingSection.hero.primaryButtonLink }}" class="btn btn--primary">{{ landingSection.hero.primaryButtonText }}</a>
-          <a href="{{ landingSection.hero.secondaryButtonLink }}" class="btn btn--neutral">{{ landingSection.hero.secondaryButtonText }}</a>
+          <a href="{{ homePage.hero.primaryButtonLink }}" class="btn btn--primary">{{ homePage.hero.primaryButtonText }}</a>
+          <a href="{{ homePage.hero.secondaryButtonLink }}" class="btn btn--neutral">{{ homePage.hero.secondaryButtonText }}</a>
         </div>
       </div>
       <div>
-        <img src="{{ landingSection.hero.heroImage | url }}" alt="{{ landingSection.hero.heroImageAlt }}" class="hero__image">
+        <img src="{{ homePage.hero.heroImage | url }}" class="landingSection__image">
       </div>
   </div>
 </section>
 
 <section id="featured-articles" class="featured-articles">
   <div class="container flow">
-    <h2 class="section-title text-center">Featured Research</h2>
-    <p class="text-center">Here is a sample of our key articles and field reports that highlight our current projects and research goals.</p>
+    
+    <h2 class="section-title text-center">{{ homePage.featuredSection.title }}</h2>
+    <p class="text-center">{{ homePage.featuredSection.description | safe }}</p>
+    
     <ul role="list" class="articles__list flow">
 
       {%- for post in collections.featured | reverse -%}

@@ -1,5 +1,7 @@
 // Import Luxon, a helpful library that makes working with dates easy
 const { DateTime } = require("luxon");
+// *** NEW: Import the Markdown-it library for rich text processing ***
+const markdownIt = require('markdown-it');
 
 // This is the main configuration file for Eleventy
 module.exports = function(eleventyConfig) {
@@ -14,6 +16,19 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
+
+  // *** NEW: Configure and add the 'markdown' filter for Nunjucks ***
+  const md = new markdownIt({
+      html: true,       // Allow HTML tags in source
+      breaks: true,     // Convert '\n' in paragraphs into <br>
+      linkify: true     // Auto-convert URL-like text to links
+  });
+
+  eleventyConfig.addNunjucksFilter("markdown", (markdownString) => {
+      // Use markdown-it to render the string as HTML
+      return md.render(markdownString);
+  });
+  // *** END NEW CONFIGURATION ***
 
   return {
     dir: {

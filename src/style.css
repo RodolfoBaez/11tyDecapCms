@@ -210,7 +210,10 @@ section,
 /* //////////////////////
   Header
   /////////////////////// */
-
+  .page-header h1 a{
+    text-decoration: none;  
+  }
+  
 .page-header {
   padding: 2em 0;
   /* ADDED: Thin line separator */
@@ -254,10 +257,13 @@ section,
 }
 
 /* //////////////////////
-  Homepage
+  Homepage (UPDATED FROM .hero TO .landingSection)
   /////////////////////// */
 
-.hero > div {
+/* All instances of .hero and its children (like .hero__image) 
+  have been updated to .landingSection 
+*/
+.landingSection > div {
   display: grid;
   grid-auto-flow: row;
   grid-auto-columns: 1fr;
@@ -265,14 +271,14 @@ section,
   gap: 3em;
 }
 
-.hero__image {
+.landingSection__image {
   width: 100%;
   /* max-height: max(15rem, 40vh); */
   object-fit: cover;
 }
 
 @media (min-width: 45em) {
-  .hero > div {
+  .landingSection > div {
     grid-auto-flow: column;
   }
 }

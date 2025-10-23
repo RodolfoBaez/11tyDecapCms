@@ -42,6 +42,7 @@ media_folder: "src/assets"
 public_folder: "/assets"
 
 # Configuration for collections
+# Configuration for collections
 collections:
   - name: "blog"
     label: "Blog"
@@ -49,33 +50,44 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
-      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Article Title", name: "title", widget: "string" }
+      - { label: "Article Description", name: "description", widget: "string" }
+      - { label: "Article Author", name: "author", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }      
+      - label: "Featured Post?"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Toggle ON to include this article in the Featured Research section on the homepage."
+        required: true
+      
+      - { label: "Article Image", name: "image", widget: "image" }
       - { label: "Image caption", name: "imageAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+
  # NEW: Homepage content collection
   - label: "Pages"
     name: "pages"
     files:
-      - label: "landingSection"
+      - label: "HomePage"
         name: "landingSection"
-        file: "src/_data/landingSection.json"
+        file: "src/_data/homePage.json"
         fields:
-          - label: "Hero Section"
+          - label: "Landing Section"
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Introduction", name: "introduction", widget: "text" }
-              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Landing Title", name: "title", widget: "string" }
+              - { label: "Landing Introduction", name: "introduction", widget: "markdown" }
               - { label: "Primary Button Text", name: "primaryButtonText", widget: "string" }
               - { label: "Primary Button Link", name: "primaryButtonLink", widget: "string" }
               - { label: "Secondary Button Text", name: "secondaryButtonText", widget: "string" }
               - { label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string" }
-              - { label: "Hero Image", name: "heroImage", widget: "image" }
-              - { label: "Hero Image Alt Text", name: "heroImageAlt", widget: "string" }
-         
+              - { label: "Landing Image", name: "heroImage", widget: "image" }
+
+          - label: "Featured Articles Section"
+            name: "featuredSection"
+            widget: "object"
+            fields:
+              - { label: "Featured Articles Title", name: "title", widget: "string" }
+              - { label: "Featured Articles Description", name: "description", widget: "markdown" }
