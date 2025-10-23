@@ -61,25 +61,25 @@ collections:
   - label: "Pages"
     name: "pages"
     files:
-      - label: "landingSection"
+      - label: "HomePage"
         name: "landingSection"
         file: "src/_data/landingSection.json"
         fields:
-          - label: "Hero Section"
+          - label: "Landing Section"
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Introduction", name: "introduction", widget: "markdown" }
+              - { label: "Landing Title", name: "title", widget: "string" }
+              - { label: "Landing Introduction", name: "introduction", widget: "markdown" }
               - { label: "Primary Button Text", name: "primaryButtonText", widget: "string" }
               - { label: "Primary Button Link", name: "primaryButtonLink", widget: "string" }
               - { label: "Secondary Button Text", name: "secondaryButtonText", widget: "string" }
               - { label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string" }
-              - { label: "Hero Image", name: "heroImage", widget: "image" }
+              - { label: "Landing Image", name: "heroImage", widget: "image" }
 
           - label: "Featured Articles Section"
             name: "featuredSection"
             widget: "object"
             fields:
-              - { label: "Section Title", name: "title", widget: "string" }
-              - { label: "Section Description", name: "description", widget: "markdown" }
+              - { label: "Featured Articles Title", name: "title", widget: "string" }
+              - { label: "Featured Articles Description", name: "description", widget: "markdown" }
