@@ -6,7 +6,7 @@ const markdownIt = require('markdown-it');
 // This is the main configuration file for Eleventy
 module.exports = function(eleventyConfig) {
   // 1. Your main styles file
-  eleventyConfig.addPassthroughCopy('./src/style.css');
+  eleventyConfig.addPassthroughCopy('src/assets');
   // 2. The images, fonts, and other files you use
   eleventyConfig.addPassthroughCopy('./src/assets');
   // 3. Files needed for the admin/CMS dashboard (Netlify CMS)
