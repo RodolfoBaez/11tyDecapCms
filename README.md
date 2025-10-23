@@ -13,20 +13,20 @@ placeholder expalin thiniceproject
 
 * **Hosting:** Cloudflare Pages
 
-* **Dependencies:** Node.js / npm
+* **Dependencies:** Node.js / pnpm
 
-## Getting Started Local Development & CMS Testing (The `npm run dev` Command)
+## Getting Started Local Development & CMS Testing (The `pnpm run dev` Command)
 
 For developing new features, creating new content structures (in `config.yml`), or testing content locally, the project is configured to prevent accidental publishing to GitHub.
 
 ### How to Use the Local Admin Portal(localhost:8080/admin)
 
 1. Start the combined service: 
-When you run `npm run dev`, it executes two scripts simultaneously:
+When you run `pnpm run dev`, it executes two scripts simultaneously:
 
-    1. **`npm run start`**: Starts the Eleventy development server (live Demo Site).
+    1. **`pnpm run start`**: Starts the Eleventy development server (live Demo Site).
 
-    2. **`npm run cms-proxy`**: Starts the `netlify-cms-proxy-server`(allows for localhost:8080/admin to use admin features like `Publish` without pushing to github).
+    2. **`pnpm run cms-proxy`**: Starts the `netlify-cms-proxy-server`(allows for localhost:8080/admin to use admin features like `Publish` without pushing to github).
 
 3. Navigate to the local admin portal: `http://localhost:8080/admin/`
 
@@ -97,7 +97,7 @@ The project is organized to separate content, templates, configuration, and asse
 
 * **`.eleventy.js`**: The central configuration file for 11ty. It tells 11ty which files to copy directly to the output folder (like CSS and assets), defines custom filters (like formatting dates), and sets the input and output directories (`src` and `public`).
 
-* **`package.json`**: Lists the project's Node.js dependencies (like Eleventy) and defines scripts for running commands like `npm start`.
+* **`package.json`**: Lists the project's Node.js dependencies (like Eleventy) and defines scripts for running commands like `pnpm start`.
 
 ---
 ### How Content Management Works
@@ -126,6 +126,7 @@ This setup allows for a seamless and secure content editing workflow:
 6.  This new commit on GitHub automatically triggers a new build and deployment on **Cloudflare Pages**.
 
 7.  Eleventy rebuilds the entire static site with the new or updated content, and the changes go live within minutes.
+
 
 
 
