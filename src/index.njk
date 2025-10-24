@@ -22,22 +22,33 @@ layout: 'base.njk'
     <a href="#featured-articles" class="landingSection__more">See more research ⬇</a>
 </section>
 
-<section id="featured-articles" class="featured-articles">
+<hr style=" border: 0; height: 2px; background-color: black; width: 100%; margin: 0 auto; ">
+
+<section id="featured-articles" class="featured-articles" style="margin-top: 4rem;">
   <div class="container flow">
     
     <h2 class="section-title text-center">{{ homePage.featuredSection.title }}</h2>
     <p class="text-center">{{ homePage.featuredSection.description | markdown | safe }}</p>
     
-    <ul role="list" class="articles__list flow">
+    <ul role="list" class="articles__list flow publications-view">
 
-      {# Articles Loop (Not limited here, as requested in previous steps) #}
-      {%- for post in collections.post  -%}
-        {% include 'article-snippet.njk' %}
+      {%- for post in collections.post | reverse -%}
+        {% if loop.index <= 4 %}
+          {% include 'article-snippet.njk' %}
+        {% endif %}
       {%- endfor %} 
     
     </ul>
+
+    <p class="text-center team-link-all">
+        <a href="/recentArticle/" class="btn btn--neutral">View All Articles →</a>
+    </p>
+
   </div>
 </section>
+
+<hr style="border: 0; height: 2px; background-color: black; margin: 3rem auto; width: 100%;">
+
 
 <section id="team" class="team-section">
     <div class="container flow">
@@ -56,3 +67,5 @@ layout: 'base.njk'
         </p>
     </div>
 </section>
+
+<hr style="border: 0; height: 2px; background-color: black; margin: 0 auto; width: 100%;margin-top: 4rem;">

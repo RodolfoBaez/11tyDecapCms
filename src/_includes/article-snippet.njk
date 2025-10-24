@@ -1,11 +1,35 @@
-<!-- This template renders a single article snippet for use in lists of articles. -->
 <li>
-  <!-- the post variable is passed in from the for loop in the parent template -->
   <article class="snippet">
-    <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" class="snippet__image">
-    <h3 class="snippet__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-    <p class="snippet__meta">by <span>{{post.data.author}}</span> on <span>{{ post.date | postDate }}</span></p>
-    <p class="snippet__body">{{post.data.description}}</p> 
-    <a href="{{ post.url }}" class="btn btn--primary">Continue Reading</a>
+    
+    {# ❌ IMAGE: Included, but is hidden by the new CSS for the card look. #}
+    <img 
+      src="{{ post.data.image }}" 
+      alt="{{ post.data.imageAlt }}" 
+      class="snippet__image"
+    >
+    
+    <div class="card-content-wrapper">
+        
+        {# 📌 DATE: Uses the snippet__meta class for date styling #}
+        <p class="snippet__meta">
+          {{ post.date | postDate }} 
+        </p>
+        
+        {# 📌 TITLE: Uses the snippet__title class for title styling #}
+        <h3 class="snippet__title">
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </h3>
+        
+        {# 📌 AUTHOR: Uses a combination of snippet__meta and the snippet__body classes for author details #}
+        <p class="snippet__meta publication-card__author-info">by <span>{{ post.data.author }}</span></p>
+        
+        {# ❌ DESCRIPTION: Hidden by the new CSS #}
+        <p class="snippet__body">{{ post.data.description }}</p>
+        
+    </div>
+
+    {# 📌 BUTTON: Uses the btn--primary class, which the new CSS overrides to be full-width/dark #}
+    <a href="{{ post.url }}" class="btn btn--primary">Read more</a>
+    
   </article> 
 </li>
