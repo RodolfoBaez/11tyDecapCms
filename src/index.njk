@@ -2,24 +2,25 @@
 title: My homepage
 layout: 'base.njk'
 ---
-      
-<section class="landingSection">
-  <div class="container flow">
-      <div class="landingSection__content flow">
-        {# UPDATED VARIABLE: Uses homePage, need homePage here due to the content being stored in homePage.json#}
-        <h1 class="section-title">{{ homePage.hero.title }}</h1>
-        
-        <p>{{ homePage.hero.introduction | markdown | safe }}</p> 
-                
-        <div class="flex-group">
-          <a href="{{ homePage.hero.primaryButtonLink }}" class="btn btn--primary">{{ homePage.hero.primaryButtonText }}</a>
-          <a href="{{ homePage.hero.secondaryButtonLink }}" class="btn btn--neutral">{{ homePage.hero.secondaryButtonText }}</a>
+ <!-- landingsection Section -->     
+<section class="landingSection hero-overlay" style="background-image: url('{{ homePage.hero.heroImage | url }}');">
+    {# The image URL is now injected via the style attribute above #}
+    <div class="container flow">
+        <div class="landingSection__content flow">
+            
+            {# Primary Title #}
+            <h1 class="section-title landingSection__title">
+                {{ homePage.hero.title }}
+            </h1>
+            
+            {# Secondary Text / Introduction #}
+            <p class="landingSection__intro">
+                {{ homePage.hero.introduction | markdown | safe }}
+            </p> 
+                        
         </div>
-      </div>
-      <div>
-        <img src="{{ homePage.hero.heroImage | url }}" class="landingSection__image">
-      </div>
-  </div>
+    </div>
+    <a href="#featured-articles" class="landingSection__more">See more research ⬇</a>
 </section>
 
 <section id="featured-articles" class="featured-articles">

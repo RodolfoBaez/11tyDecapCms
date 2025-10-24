@@ -83,7 +83,7 @@ collections:
               - { label: "Primary Button Link", name: "primaryButtonLink", widget: "string" }
               - { label: "Secondary Button Text", name: "secondaryButtonText", widget: "string" }
               - { label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string" }
-              - { label: "Landing Image", name: "heroImage", widget: "image" }
+              - { label: "Landing Background Image", name: "heroImage", widget: "image" }
 
           - label: "Featured Articles Section"
             name: "featuredSection"

@@ -1,12 +1,12 @@
 {
   "hero": {
     "secondaryButtonLink": "./blog",
-    "heroImage": "/assets/MohonkLake.jpeg",
+    "heroImage": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXFsMzI0aWh0dmFnNnp6cmsyeGl6bm0xZXd1ZjVjcDk0OWVhZnpvdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K1JaHN9vuWKg9MfvS4/giphy.gif",
     "primaryButtonText": "Featured Research(goes to google.com)",
     "primaryButtonLink": "https://www.google.com/search?q=github&rlz=1C1GCEA_enUS1185US1185&oq=github&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGDwyBggDEEUYPDIGCAQQRRg80gEHNjk1ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8",
     "secondaryButtonText": "All Field Reports",
     "title": "changin title after all file name changes",
-    "introduction": "* testing this [](https://google.com)[trying to make this a link ](https://google.com)trying to make this **bold. trying this out on the actual build**. look at how *cool this is maybe this is `cooler it look like code but this is a list`* \n* *`i made it a list above\\`*\n\n  *`chilling in bio stats`* \n\n  ![](/assets/MohonkLake.jpeg)",
+    "introduction": "* testing this [](https://google.com)[trying to make this a link ](https://google.com)trying to make this **bold. trying this out on the actual build**. look at how *cool this is maybe this is `cooler it look like code but this is a list`* \n* *`i made it a list above\\`*\n\n  *`chilling in bio stats`*",
     "description": "Our fieldwork focuses on sampling and analysis in local bodies of water, including **Lake Minnewaska**, **Lake Mohonk**, and other critical small aquatic ecosystems in the area. Our articles below document our findings, methodologies, and progress."
   },
   "featuredSection": {
