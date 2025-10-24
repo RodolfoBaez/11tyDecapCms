@@ -7,7 +7,7 @@
     "start": "eleventy --serve",
     "build": "eleventy",
     "cms-proxy": "netlify-cms-proxy-server",
-    "dev": "concurrently \"npm run start\" \"npm run cms-proxy\""
+    "dev": "concurrently \"pnpm run start\" \"pnpm run cms-proxy\""
   },
   "repository": {
     "type": "git",
