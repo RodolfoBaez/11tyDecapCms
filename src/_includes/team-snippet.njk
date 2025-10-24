@@ -1,0 +1,16 @@
+<li>
+  <article class="team-member">
+    <a href="{{ member.url | url }}" class="team-member__link">
+      <img 
+        src="{{ member.data.image | url }}" 
+        alt="{{ member.data.imageAlt }}" 
+        class="team-member__image"
+      >
+      <div class="team-member__details flow">
+        <h3 class="team-member__name">{{ member.data.name }}</h3>
+        <p class="team-member__position">{{ member.data.position }}</p>
+        <p class="team-member__institution">{{ member.data.institution }}</p>
+      </div>
+    </a>
+  </article> 
+</li>

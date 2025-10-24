@@ -1,0 +1,5 @@
+{
+    "Json_Comment": "uses member-page.njk for team member layout, and tags content as team for easy filtering",
+    "layout": "member-page.njk",
+    "tags": "team"
+  }

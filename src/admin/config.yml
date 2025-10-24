@@ -85,3 +85,15 @@ collections:
             fields:
               - { label: "Featured Articles Title", name: "title", widget: "string" }
               - { label: "Featured Articles Description", name: "description", widget: "markdown",hint: "To change the articles currently featured on the homepage, navigate to the 'Article Admin control', edit the specific article, and use tag 'Featured'" }
+  - name: "team"
+    label: "Team Members"
+    folder: "src/team"
+    create: true
+    slug: "{{name | slug}}"
+    fields:
+      - { label: "Full Name", name: "name", widget: "string" }
+      - { label: "Position Title", name: "position", widget: "string" }
+      - { label: "Institution", name: "institution", widget: "string" }
+      - { label: "Member Photo", name: "image", widget: "image" }
+      - { label: "Photo Description (Alt)", name: "imageAlt", widget: "string" }
+      - { label: "Bio/Details", name: "body", widget: "markdown" }    

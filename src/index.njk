@@ -2,8 +2,7 @@
 title: My homepage
 layout: 'base.njk'
 ---
- <!-- landingsection Section -->     
-<section class="landingSection hero-overlay" style="background-image: url('{{ homePage.hero.heroImage | url }}');">
+ <section class="landingSection hero-overlay" style="background-image: url('{{ homePage.hero.heroImage | url }}');">
     {# The image URL is now injected via the style attribute above #}
     <div class="container flow">
         <div class="landingSection__content flow">
@@ -31,10 +30,29 @@ layout: 'base.njk'
     
     <ul role="list" class="articles__list flow">
 
-      {%- for post in collections.featured | reverse -%}
+      {# Articles Loop (Not limited here, as requested in previous steps) #}
+      {%- for post in collections.post  -%}
         {% include 'article-snippet.njk' %}
       {%- endfor %} 
     
     </ul>
   </div>
+</section>
+
+<section id="team" class="team-section">
+    <div class="container flow">
+        <h2 class="section-title text-center">Our Research Team</h2>
+        
+        <ul role="list" class="team-list">
+            {%- for member in collections.team -%}
+                {% if loop.index <= 4 %}
+                    {% include 'team-snippet.njk' %}
+                {% endif %}
+            {%- endfor %}
+        </ul>
+        
+        <p class="text-center team-link-all">
+            <a href="/team/" class="btn btn--neutral">View All Team Members →</a>
+        </p>
+    </div>
 </section>
