@@ -73,10 +73,6 @@ collections:
             fields:
               - { label: "Landing Title", name: "title", widget: "string" }
               - { label: "Landing Introduction", name: "introduction", widget: "markdown" }
-              - { label: "Primary Button Text", name: "primaryButtonText", widget: "string" }
-              - { label: "Primary Button Link", name: "primaryButtonLink", widget: "string" }
-              - { label: "Secondary Button Text", name: "secondaryButtonText", widget: "string" }
-              - { label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string" }
               - { label: "Landing Background Image", name: "heroImage", widget: "image" }
 
           - label: "Featured Articles Section"
