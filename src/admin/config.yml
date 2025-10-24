@@ -44,9 +44,9 @@ public_folder: "/assets"
 # Configuration for collections
 # Configuration for collections
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/blog"
+  - name: "Article"
+    label: "Article"
+    folder: "src/article"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
