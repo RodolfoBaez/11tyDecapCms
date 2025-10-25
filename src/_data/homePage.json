@@ -1,7 +1,7 @@
 {
   "hero": {
     "secondaryButtonLink": "./blog",
-    "heroImage": "/assets/MohonkLake.jpeg",
+    "heroImage": "/assets/images/MohonkLake.jpeg",
     "primaryButtonText": "Featured Research(goes to google.com)",
     "primaryButtonLink": "https://www.google.com/?zx=1761112171593&no_sw_cr=1",
     "secondaryButtonText": "All Field Reports",
