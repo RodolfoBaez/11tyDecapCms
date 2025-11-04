@@ -5,12 +5,10 @@ layout: 'base.njk'
 <section class="publications-section" id="publications">
     <div class="container flow">
         
-        {# Access the title via publications.publicationsSection.title #}
-        <h2 class="section-title text-center">{{ publications.publicationsSection.title }}</h2>
+        <h2 class="section-title">{{ publications.publicationsSection.title }}</h2>
         
-        <div class="flow text-center" style="margin-top: 1.5rem;">
+        <div class="flow" style="margin-top: 1.5rem;">
         
-            {# Access the content via publications.publicationsSection.content #}
             {{ publications.publicationsSection.content | markdown | safe }}
 
         </div>
