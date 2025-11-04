@@ -42,12 +42,11 @@ media_folder: "src/assets"
 public_folder: "/assets"
 
 # Configuration for collections
-# Configuration for collections
 collections:
- # NEW: Homepage content collection
-  - label: "Homepage Content"
+  - label: "Site Pages" 
     name: "pages"
     files:
+      # File 1: The Homepage
       - label: "HomePage"
         name: "landingSection"
         file: "src/_data/homePage.json"
@@ -64,13 +63,30 @@ collections:
             name: "featuredSection"
             widget: "object"
             fields:
-              - { label: "Featured Articles Title", name: "title", widget: "string",hint: "How to edit Research Highlights shown on homePage. Go to admin panel and edit the Research Highlight, only up to 4 highlights with the key word of 'featured' is written on the tag will be displayed on homePage " }
+              - { label: "Featured Articles Title", name: "title", widget: "string", hint: "How to edit Research Highlights shown on homePage. Go to admin panel and edit the Research Highlight, only up to 4 highlights with the key word of 'featured' is written on the tag will be displayed on homePage " }
+          
           - label: "Our Research Team"
             name: "teamSection"
             widget: "object"
             fields:
               - { label: "Team Section Title", name: "title", widget: "string", hint: "How edit team members shown on homePage. Go to the admin panel and edit the team members only the first 5 team members will be shown in the homepage."}
-             
+
+      # File 2: The Publications page 
+      - label: "Publications Page"
+        name: "publications"
+        file: "src/_data/publications.json"
+        fields:
+          - label: "Publications Section"
+            name: "publicationsSection"
+            widget: "object"
+            fields:
+              - { label: "Publications Section Title", name: "title", widget: "string" }
+              - label: "Content"
+                name: "content"
+                widget: "markdown"
+                hint: "Write your text here. Use the link button in the toolbar to add links (e.g., to Google Scholar or ORCID)."
+
+  # This is now collections[1]
   - name: "Research Highlights"
     label: "Research Highlights"
     folder: "src/article"
@@ -86,6 +102,7 @@ collections:
       - { label: "Image caption", name: "imageAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  # This is now collections[2]
   - name: "team"
     label: "Team Members"
     folder: "src/team"
@@ -97,4 +114,9 @@ collections:
       - { label: "Institution", name: "institution", widget: "string" }
       - { label: "Member Photo", name: "image", widget: "image" }
       - { label: "Photo Description (Alt)", name: "imageAlt", widget: "string" }
-      - { label: "Bio/Details", name: "body", widget: "markdown" }    
+      - { label: "Bio/Details", name: "body", widget: "markdown" }
+
+# 
+# END OF FILE.
+# The entire duplicated section below this line has been removed.
+#
