@@ -26,12 +26,10 @@ layout: 'base.njk'
 <section id="featured-articles" class="featured-articles" style="margin-top: 4rem;">
   <div class="container flow">
     
-    <h2 class="section-title text-center">{{ homePage.featuredSection.title }}</h2>
-    <p class="text-center">{{ homePage.featuredSection.description | markdown | safe }}</p>
-    
+    <h2 class="section-title text-center">{{ homePage.featuredSection.title }}</h2>    
     <ul role="list" class="articles__list flow publications-view">
 
-      {%- for post in collections.post | reverse -%}
+      {%- for post in collections.featured | reverse -%}
         {% if loop.index <= 4 %}
           {% include 'article-snippet.njk' %}
         {% endif %}
@@ -51,11 +49,11 @@ layout: 'base.njk'
 
 <section id="team" class="team-section">
     <div class="container flow">
-        <h2 class="section-title text-center">Our Research Team</h2>
+        <h2 class="section-title text-center">{{ homePage.teamSection.title }}</h2>
         
         <ul role="list" class="team-list">
             {%- for member in collections.team -%}
-                {% if loop.index <= 4 %}
+                {% if loop.index <= 5 %}
                     {% include 'team-snippet.njk' %}
                 {% endif %}
             {%- endfor %}

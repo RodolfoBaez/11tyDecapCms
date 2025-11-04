@@ -44,23 +44,8 @@ public_folder: "/assets"
 # Configuration for collections
 # Configuration for collections
 collections:
-  - name: "Article"
-    label: "Article"
-    folder: "src/article"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Article Title", name: "title", widget: "string" }
-      - { label: "Article Description", name: "description", widget: "string" }
-      - { label: "Article Author", name: "author", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" } 
-      - { label: "Tags(Write Featured to be in HomePage Featured Section)", name: "tags", widget: "list", default: ["post"] }      
-      - { label: "Article Image", name: "image", widget: "image" }
-      - { label: "Image caption", name: "imageAlt", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
  # NEW: Homepage content collection
-  - label: "Pages"
+  - label: "Homepage Content"
     name: "pages"
     files:
       - label: "HomePage"
@@ -79,8 +64,28 @@ collections:
             name: "featuredSection"
             widget: "object"
             fields:
-              - { label: "Featured Articles Title", name: "title", widget: "string" }
-              - { label: "Featured Articles Description", name: "description", widget: "markdown",hint: "To change the articles currently featured on the homepage, navigate to the 'Article Admin control', edit the specific article, and use tag 'Featured'" }
+              - { label: "Featured Articles Title", name: "title", widget: "string",hint: "How to edit Research Highlights shown on homePage. Go to admin panel and edit the Research Highlight, only up to 4 highlights with the key word of 'featured' is written on the tag will be displayed on homePage " }
+          - label: "Our Research Team"
+            name: "teamSection"
+            widget: "object"
+            fields:
+              - { label: "Team Section Title", name: "title", widget: "string", hint: "How edit team members shown on homePage. Go to the admin panel and edit the team members only the first 5 team members will be shown in the homepage."}
+             
+  - name: "Research Highlights"
+    label: "Research Highlights"
+    folder: "src/article"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Article Title", name: "title", widget: "string" }
+      - { label: "Article Description", name: "description", widget: "string" }
+      - { label: "Article Author", name: "author", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" } 
+      - { label: "Tags(Write Featured to be in HomePage Featured Section, Limited to up to 4 Research Highlights)", name: "tags", widget: "list", default: ["post"] }      
+      - { label: "Article Image", name: "image", widget: "image" }
+      - { label: "Image caption", name: "imageAlt", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "team"
     label: "Team Members"
     folder: "src/team"

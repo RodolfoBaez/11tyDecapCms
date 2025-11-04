@@ -1,5 +1,5 @@
 ---
-title: My Trip to Mohonk Lake
+title: test
 description: A beautiful autumn day at Mohonk Lake
 author: Cyrus Mika, Christopher Jamieson,Waheed Saroyia
 date: 2024-07-24T14:17:00.000-04:00
