@@ -1,10 +1,11 @@
 ---
-title: My Trip to Mohonk Lake
+title: this is the third research highlight
 description: A beautiful autumn day at Mohonk Lake
 author: Cyrus Mika, Christopher Jamieson,Waheed Saroyia
 date: 2024-07-24T14:17:00.000-04:00
 tags:
   - post
+  - featured
 image: https://nsfthinice.github.io/ThinIceProject/images/highlights/new-paltz-ac2-team-photo.jpg
 imageAlt: Scenic view of Mohonk Lake surrounded by fall foliage
 ---
